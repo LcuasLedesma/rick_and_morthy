@@ -18,11 +18,24 @@ body {
   margin: 1rem;
   padding: 0.8rem;
   width: 300px;
-  background: linear-gradient(to bottom, rgb(87, 197, 101), rgb(12, 49, 15));
+  height: auto;
+  background: linear-gradient(
+    to bottom,
+    rgb(87, 197, 101),
+    rgb(16, 65, 20),
+    rgb(12, 49, 15)
+  );
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
   text-align: center;
   border-radius: 1.5rem;
   color: white;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  /* Estilos de la carta cuando se coloca el mouse encima */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
 }
 
 img {
@@ -141,6 +154,7 @@ input[type="text"] {
 
 h1 {
   font-size: 32px;
+  margin: 0;
 }
 
 h2 {
@@ -148,19 +162,18 @@ h2 {
 }
 
 .imagen {
-  margin-top: 20px;
 }
 
 .form {
-  position: relative;
-  margin-top: 40rem;
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2rem;
-  width: 50rem;
-  height: 40rem;
-  margin-bottom: 4rem;
-  border-radius: var(--radius);
+  width: 45%;
+  height: 50%;
+  /* margin-bottom: 4rem; */
+  border: solid 5px #0f2c25;
   background-color: #1b5043;
 }
 
@@ -199,7 +212,7 @@ h2 {
 .label1 {
   position: absolute;
   top: 54%;
-  left: 20%;
+  left: 19%;
   color: #ffffff;
   transform: translate(-50%, -50%);
   font-size: 3rem;
