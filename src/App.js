@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import "./index.css";
+import './css/index.css';
 import Nav from "./components/nav";
 import axios from "axios";
 import Cards from './components/cards'
@@ -7,6 +7,7 @@ import About from "./components/about";
 import Detail from "./components/Detail";
 import {Routes,Route,useLocation,useNavigate} from 'react-router-dom'
 import Form from "./components/Form"
+import Fav from "./components/fav"
 
 
 function App() {
@@ -47,9 +48,10 @@ function App() {
   }
 
   return (
-      <div className="">
+      <div>
         {location.pathname !== "/" && <Nav onSearch={onSearch} setAccess={setAccess} access={access}/>}
         <Routes>
+          <Route path="/Favorites" element={<Fav />} /> 
           <Route path="/" element={<Form login={login}/>} />
           <Route path="/Home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />

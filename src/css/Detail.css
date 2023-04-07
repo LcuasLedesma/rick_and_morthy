@@ -1,0 +1,46 @@
+.detail-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: 99vh;
+}
+
+.left-column {
+  background-color: rgb(20, 20, 20, 0.6);
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+}
+
+.character-image {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 8px solid #1b5043;
+}
+
+.name {
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.property {
+  font-size: 2.5rem;
+  font-family: system-ui;
+  color: white;
+}

@@ -1,0 +1,65 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to top, rgb(87, 197, 101), rgb(12, 49, 15));
+  color: #fff;
+  padding: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  justify-self: flex-start;
+  width: 50%;
+  gap: 1rem;
+}
+
+.nav input[type="text"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  width: 60%;
+  height: 1.3rem;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+  text-align: center;
+  font-family: Arial;
+}
+
+.button {
+  border: none;
+  background-color: rgb(123, 197, 27);
+  color: #292929;
+  font-weight: bold;
+  cursor: pointer;
+  height: 2.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-self: end;
+  gap: 1rem;
+}
+
+.buttons button:hover,
+.button:hover {
+  background-color: #a4f81c;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.buttons button {
+  border: none;
+  background-color: rgb(123, 197, 27);
+  color: #292929;
+  font-weight: bold;
+  cursor: pointer;
+  height: 2.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}

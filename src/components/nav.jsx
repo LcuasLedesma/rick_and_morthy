@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../index.css'
+import '../css/nav.css'
 import {Link,  useNavigate} from 'react-router-dom'
 
 export default function Nav(props) {
@@ -20,13 +20,22 @@ export default function Nav(props) {
     navigate('/')
   }
   return (
-    <nav className='header'>
-      <input type="text" value={id} onChange={handleChange}/>
-      <button onClick={onSearch} className='btn'>agregar</button>
-      <Link to="/Home"><button className='btn2'>Home</button></Link>
-      <Link to="/about"><button className='btn1'>About</button></Link>
-      <button onClick={handleLogOut} className='btn3'>Log out</button>
+    <nav className='nav'>
+      
+        <div className='left'>
+          <input type="text" value={id} onChange={handleChange} placeholder='Search your card' className='search-bar'/>
+          <button onClick={onSearch} className='button'>agregar</button>
+        </div>
+        
+        <div className='buttons'>
+          <Link to="/Home"><button >Home</button></Link>
+          <Link to="/about"><button >About</button></Link>
+          <button onClick={handleLogOut} >Log out</button>
+          <Link to="/Favorites"><button >Favorites</button></Link>
+        </div>
+    
     </nav>
+    
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { validateEmail, validatePassword } from "../validation";
+import '../css/form.css'
 
 
 function Form (props){
@@ -31,26 +32,26 @@ function Form (props){
   return(
     <form onSubmit={handleSubmit} className='form'>
       
-      <label htmlFor="email" className="label2">email</label>
+      <label htmlFor="email" className="label22">email</label>
       <input 
         type="text"
         id="email"
         name="email"
         value={userData.email}
         onChange={handleChange} 
-        className="form-control1"
+        className="form-control11"
       />
       
       {errors.email && <div className="email-error">{errors.email}</div>}
       
-      <label htmlFor="password" className="label1"> password</label>
+      <label htmlFor="password" className="label11"> password</label>
       <input 
         type="text"
         id="password"
         name="password"
         value={userData.password}
         onChange={handleChange}
-        className="form-control2"
+        className="form-control22"
       />
       {errors.password && <div className="password-error">{errors.password}</div>}
       
