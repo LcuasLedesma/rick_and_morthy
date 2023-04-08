@@ -35,74 +35,55 @@ function Fav() {
 
   const favorites = useSelector((state) => state.favorites);
   const allCharacters = useSelector((state) => state.allCharacters);
-
-  if (favorites.length === allCharacters.length && aux === false) {
-    return (
-      <main className="main-container">
-        <div className="select-container">
-          <select onChange={handleOrder}>
-            <option value="" selected>
-              Seleccione una opción
-            </option>
-            <option value="A">Ascendant</option>
-            <option value="B">descending</option>
-          </select>
-          <button onClick={handleShowAllCharacters}>Show all Characters</button>
-          <select onChange={handleFilter}>
-            <option value="" selected>
-              Seleccione una opción
-            </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Genderless">Genderless</option>
-            <option value="unknown">unknown</option>
-          </select>
-        </div>
-
-        <div className="container">
-          {favorites.map((fav) => (
-            <Card
-              name={fav.name}
-              species={fav.species}
-              gender={fav.gender}
-              image={fav.image}
-              id={fav.id}
-            />
-          ))}
-        </div>
-      </main>
-    );
-  } else {
-    return (
-      <main className="main-container">
-        <div className="select-container">
-          <select onChange={handleOrder}>
-            <option value="A">Ascendant</option>
-            <option value="B">descending</option>
-          </select>
-          <button onClick={handleShowAllCharacters}>Show all Characters</button>
-          <select onChange={handleFilter}>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Genderless">Genderless</option>
-            <option value="unknown">unknown</option>
-          </select>
-        </div>
-
-        <div className="container">
-          {allCharacters.map((fav) => (
-            <Card
-              name={fav.name}
-              species={fav.species}
-              gender={fav.gender}
-              image={fav.image}
-              id={fav.id}
-            />
-          ))}
-        </div>
-      </main>
-    );
-  }
+  const isFavoritesAllCharacters = favorites.length !== allCharacters.length && aux === false;
+  console.log(isFavoritesAllCharacters);
+  console.log(favorites)
+  console.log(allCharacters);
+  return (
+    <main className="main-container">
+      <div className="select-container">
+        <select onChange={handleOrder}>
+          <option value="" selected>
+            Seleccione una opción
+          </option>
+          <option value="A">Ascendant</option>
+          <option value="B">descending</option>
+        </select>
+        <button onClick={handleShowAllCharacters}>Show all Characters</button>
+        <select onChange={handleFilter}>
+          <option value="" selected>
+            Seleccione una opción
+          </option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Genderless">Genderless</option>
+          <option value="unknown">unknown</option>
+        </select>
+      </div>
+  
+      <div className="container">
+        {isFavoritesAllCharacters
+          ? favorites.map((fav) => (
+              <Card
+                name={fav.name}
+                species={fav.species}
+                gender={fav.gender}
+                image={fav.image}
+                id={fav.id}
+              />
+            ))
+          : allCharacters.map((fav) => (
+              <Card
+                name={fav.name}
+                species={fav.species}
+                gender={fav.gender}
+                image={fav.image}
+                id={fav.id}
+              />
+            ))}
+      </div>
+    </main>
+  );
 }
 
 export default Fav;

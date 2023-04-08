@@ -16,6 +16,7 @@ const reducer = (state = initialState, action) => {
       };
 
     case "REMOVE_FAV":
+      
       const updatedFavorites = state.favorites.filter(
         (fav) => fav.id !== action.payload
       );

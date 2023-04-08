@@ -23,8 +23,8 @@ export default function Nav(props) {
     <nav className='nav'>
       
         <div className='left'>
-          <input type="text" value={id} onChange={handleChange} placeholder='Search your card' className='search-bar'/>
-          <button onClick={onSearch} className='button'>agregar</button>
+          <input type="text" value={id} onChange={handleChange} placeholder='Search your card' />
+          <button onClick={onSearch} className='button'>Add</button>
         </div>
         
         <div className='buttons'>

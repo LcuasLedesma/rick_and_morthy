@@ -2,19 +2,24 @@
 
 /* Estilos generales */
 * {
-}
-
-body {
-  background-image: url("../img/3307.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Arial black;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background-image:url("../img/3307.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #000; */
+  font-family: Arial black;
+  height: 100%;
+}
+
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 1rem;
   padding: 0.8rem;
   width: 300px;
@@ -38,6 +43,15 @@ body {
   transform: translateY(-8px);
 }
 
+.image-container{
+
+}
+
+.text-container{
+  text-align: center;
+}
+
+
 .imagen {
   max-width: 100%;
   height: auto;
@@ -45,15 +59,20 @@ body {
 }
 
 .boton {
-  margin-left: 280px;
-  margin-bottom: 0px;
+  width: 10px;
   border: none;
-  background-color: #fff;
-  color: #292929;
   font-weight: bold;
   cursor: pointer;
   background-color: rgb(20, 20, 20, 0);
   color: white;
+}
+
+.boton-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 .link {
@@ -83,6 +102,8 @@ h1 {
 
 h2 {
   font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .form {
@@ -153,27 +174,14 @@ h2 {
   width: 50rem;
 }
 
-.email-error {
-  position: absolute;
-  top: 41%;
-  left: 5%;
-  color: #a1a334;
-  font-size: 20px;
-}
 
-.password-error {
-  color: #a1a334;
-  position: absolute;
-  top: 70%;
-  left: 5%;
-  font-size: 20px;
-}
 
 .corazon {
+
   background-color: transparent;
   border: none;
   cursor: pointer;
-  position: absolute;
+ 
 }
 
 .container {
@@ -185,7 +193,7 @@ h2 {
 
 .select-container {
   height: 60px;
-  margin-top: 10px;
+  margin-top: 0px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -194,6 +202,7 @@ h2 {
   column-gap: 60px;
   font-family: Arial Black;
   justify-content: center;
+  background-color: rgba(15, 59, 19, 0.6)
 }
 
 .select-container select {
@@ -206,12 +215,14 @@ h2 {
   text-align: center;
   font-family: Arial;
   border: 0.1px solid;
+  border-radius: 5px;
 }
 
 .select-container button {
   height: 40px;
   background-color: rgb(123, 197, 27);
   border: 0.1px solid;
+  border-radius: 5px;
 }
 
 .select-container button:hover {

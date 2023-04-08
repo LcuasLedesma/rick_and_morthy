@@ -17,7 +17,7 @@ function App() {
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
   const EMAIL = "ejemplo@gmail.com";
-  const PASSWORD = "probando1";
+  const PASSWORD = "probando11";
 
   useEffect(() => {
     !access && navigate("/");

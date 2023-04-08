@@ -8,54 +8,56 @@ function Form (props){
   const [errors, setErrors] = useState({})
 
   const handleChange = (e)=>{
+    e.preventDefault(); 
     const name = e.target.name;
     const value = e.target.value;
     setUserData({...userData, [name]: value});
-    console.log(userData);
-  };
-
-  const handleSubmit = (e) =>{
-    e.preventDefault();
 
     const emailErrors = validateEmail(userData.email);
     const passwordErrors = validatePassword(userData.password);
 
     setErrors({ email: emailErrors.email, password: passwordErrors.password });
+    
+    
+  };
 
-    if (Object.keys(emailErrors).length === 0 && Object.keys(passwordErrors).length === 0) {
-      // Validación pasada, enviar formulario
-      console.log("Formulario enviado");
-    }
-    props.login(userData)
+  const handleSubmit = (e) =>{
+    e.preventDefault();  
+    props.login(userData)  
   }
 
   return(
     <form onSubmit={handleSubmit} className='form'>
       
-      <label htmlFor="email" className="label22">email</label>
-      <input 
-        type="text"
-        id="email"
-        name="email"
-        value={userData.email}
-        onChange={handleChange} 
-        className="form-control11"
+      <div className="email-container">
+        <label htmlFor="email" className="label22">email</label>
+        <input 
+          type="text"
+          id="email"
+          name="email"
+          value={userData.email}
+          onChange={handleChange} 
+          
       />
+        {errors.email ? <p>{errors.email}</p>: ''}
+      </div>
       
-      {errors.email && <div className="email-error">{errors.email}</div>}
+      <div className="password-container">
+        <label htmlFor="password" className="label11"> password</label>
+        <input 
+          type="text"
+          id="password"
+          name="password"
+          value={userData.password}
+          onChange={handleChange} 
+        />
+        {errors.password ? <p>{errors.password}</p>: ''}
+      </div>
       
-      <label htmlFor="password" className="label11"> password</label>
-      <input 
-        type="text"
-        id="password"
-        name="password"
-        value={userData.password}
-        onChange={handleChange}
-        className="form-control22"
-      />
-      {errors.password && <div className="password-error">{errors.password}</div>}
       
-      <button className="btn4">Submit</button>
+        <button className="buttn" disabled={!userData.email || !userData.password || errors.email || errors.password}>Submit</button>
+      
+      
   </form>
   )
 }

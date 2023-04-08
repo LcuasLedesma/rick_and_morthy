@@ -28,26 +28,40 @@ function Card(props) {
 
   return (
     <div className="card">
-      {isFav ? (
-        <button className="corazon" onClick={handleFavorite}>
-          ❤️
-        </button>
-      ) : (
-        <button className="corazon" onClick={handleFavorite}>
-          🤍
-        </button>
-      )}
+      <div className="boton-container">
+        <div>
+          {isFav ? (
+          <button className="corazon" onClick={handleFavorite}>
+            ❤️
+          </button>
+        ) : (
+          <button className="corazon" onClick={handleFavorite}>
+            🤍
+          </button>
+        )}
+        </div>
+        
+        <div>
+          <button onClick={onClose} className="boton">
+            X
+          </button>
+        </div>
+        
+      </div>
+      <div className='text-container'>
+        <Link to={`/detail/${id}`} className="link">
+          <h1>{name}</h1>
+        </Link>
+        <h2>{species}</h2>
+        <h2>{gender}</h2>
+      </div>
+      <div className='image-container'>
+        <img src={image} alt={name} className="imagen" />
+      </div>
 
-      <button onClick={onClose} className="boton">
-        X
-      </button>
-      <Link to={`/detail/${id}`} className="link">
-        <h1>{name}</h1>
-      </Link>
-      <h2>{species}</h2>
-      <h2>{gender}</h2>
+      
 
-      <img src={image} alt={name} className="imagen" />
+      
     </div>
   );
 }

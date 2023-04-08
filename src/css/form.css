@@ -1,120 +1,88 @@
 /* index.css */
 
 /* Estilos generales */
-body {
-  background-image: url("../img/3307.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Arial black;
-}
-
-input[type="text"] {
-  padding: 0.5rem;
+.email-container input,
+.password-container input {
+  padding: 0;
+  justify-self: end;
   border-radius: 5px;
   border: none;
-  width: 88%;
-  height: 5%;
-  margin-right: 1rem;
-  font-size: 1.5rem;
+  width: 100%;
+  height: 2rem;
+  font-size: 18px;
   text-align: center;
   font-family: Arial;
 }
 
-input[type="text"]:focus {
+
+.email-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.password-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form input:focus { 
   outline: none;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
 }
 
 .form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
   width: 30%;
-  height: 40%;
+  height: 20rem;
   border: solid 5px #0f2c25;
   background-color: #1b5043;
-}
-
-.form-control11 {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0rem;
   align-items: center;
-  transform: translate(-50%, -50%);
-  column-gap: 30px;
-  font-family: Arial black;
-  font-size: 80px;
 }
 
-.form-control22:focus {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-}
-
-.form-control22 {
-  position: absolute;
-  top: 65%;
-  left: 50%;
-  display: flex;
-  align-items: center;
-  transform: translate(-50%, -50%);
-  column-gap: 30px;
-  width: 90%;
-  height: 6%;
-  font-family: Arial black;
-  font-size: 80px;
-  box-shadow: inset;
-}
 .label11 {
-  position: absolute;
-  top: 54%;
-  left: 19%;
   color: #ffffff;
-  transform: translate(-50%, -50%);
   font-size: 1.5rem;
 }
 
 .label22 {
-  position: absolute;
-  top: 25%;
-  left: 13%;
   color: #fffdfd;
-  transform: translate(-50%, -50%);
   font-size: 1.5rem;
 }
 
-.email-error {
-  position: absolute;
-  top: 41%;
-  left: 5%;
+.form p{
   color: #a1a334;
-  font-size: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-.password-error {
-  color: #a1a334;
-  position: absolute;
-  top: 70%;
-  left: 5%;
-  font-size: 20px;
-}
-
-.btn4 {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  width: 8rem;
-  height: 2rem;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  border: none;
+.buttn{
+  font-size: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 5px;
+  width: 7rem;
+  height: 10%;
   background-color: #fff;
-  color: #292929;
-  font-weight: bold;
   cursor: pointer;
-  font-family: Arial black;
-  font-size: 15px;
-  border-radius: 10px;
+  border: none;
 }
+
+.buttn button{
+  /* font-family: Arial;
+  background-color: #fff;
+  cursor: pointer;
+  border: none;
+  width: auto;
+  height: auto; */
+}
+
