@@ -11,9 +11,9 @@ body {
   background-image:url("../img/3307.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-color: #000; */
+  background-position: center center;
+  background-attachment: fixed;
   font-family: Arial black;
-  height: 100%;
 }
 
 .card {
@@ -242,3 +242,10 @@ h2 {
   border-color: #0f2c25;
   outline: none;
 }
+
+@media screen and (max-width: 768px) {
+  .body{
+    height: 100vh ;
+  }
+}
+  

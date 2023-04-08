@@ -13,7 +13,8 @@
 .left {
   display: flex;
   justify-self: flex-start;
-  width: 50%;
+  width: fit-content;
+  
   gap: 1rem;
 }
 

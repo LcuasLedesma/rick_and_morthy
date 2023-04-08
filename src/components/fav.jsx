@@ -23,8 +23,8 @@ function Fav() {
   const handleFilter = (e) => {
     const selectedValue = e.target.value;
     const action = filterCards(selectedValue);
-    setAux(!aux);
     dispatch(action);
+    setAux(!aux);
   };
 
   const handleShowAllCharacters = () => {
@@ -35,9 +35,9 @@ function Fav() {
 
   const favorites = useSelector((state) => state.favorites);
   const allCharacters = useSelector((state) => state.allCharacters);
-  const isFavoritesAllCharacters = favorites.length !== allCharacters.length && aux === false;
+  const isFavoritesAllCharacters = favorites.length === allCharacters.length && aux === false;
+  console.log(favorites);
   console.log(isFavoritesAllCharacters);
-  console.log(favorites)
   console.log(allCharacters);
   return (
     <main className="main-container">
