@@ -18,7 +18,6 @@ function Form (props){
 
     setErrors({ email: emailErrors.email, password: passwordErrors.password });
     
-    
   };
 
   const handleSubmit = (e) =>{
@@ -56,8 +55,7 @@ function Form (props){
       
       
         <button className="buttn" disabled={!userData.email || !userData.password || errors.email || errors.password}>Submit</button>
-      
-      
+          
   </form>
   )
 }
