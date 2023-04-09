@@ -12,6 +12,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFavorite, removeFavorite, remove } from "./redux/action";
 
 function App() {
+  const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+  const API_KEY = 'c76919a57a70.9ee53e5df437a92c0ab7';
+
   const location = useLocation();
   const dispatch = useDispatch();
   const [characters, setCharacters] = useState([]);
@@ -34,7 +37,7 @@ function App() {
 
   function addRandomCharacter() {
     const randomId = Math.floor(Math.random() * 827) + 1;
-    axios(`https://rickandmortyapi.com/api/character/${randomId}`).then(
+    axios(`${URL_BASE}/${randomId}?key=${API_KEY}`).then(
       ({ data }) => {
         if (data.name) {
           // Verifica si el personaje ya está en la lista
@@ -57,7 +60,7 @@ function App() {
       return;
     }
   
-    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+    axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
