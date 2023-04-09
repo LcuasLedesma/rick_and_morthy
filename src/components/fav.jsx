@@ -24,7 +24,7 @@ function Fav() {
     const selectedValue = e.target.value;
     const action = filterCards(selectedValue);
     dispatch(action);
-    setAux(!aux);
+    setAux(true);
   };
 
   const handleShowAllCharacters = () => {
@@ -35,10 +35,7 @@ function Fav() {
 
   const favorites = useSelector((state) => state.favorites);
   const allCharacters = useSelector((state) => state.allCharacters);
-  const isFavoritesAllCharacters = favorites.length === allCharacters.length && aux === false;
-  console.log(favorites);
-  console.log(isFavoritesAllCharacters);
-  console.log(allCharacters);
+  const isFavoritesAllCharacters =  aux === false;
   return (
     <main className="main-container">
       <div className="select-container">

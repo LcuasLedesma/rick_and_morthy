@@ -49,11 +49,20 @@ const reducer = (state = initialState, action) => {
       };
 
     case "ShowAllCharacters":
-      console.log("a");
+      
       return {
         ...state,
         allCharacters: state.favorites,
       };
+
+    case "REMOVE":
+      const updatedCharacters = state.allCharacters.filter(
+        (ch) => ch.id !== action.payload
+      );
+      return {
+        ...state,
+        allCharacters: updatedCharacters,
+      }
 
     default:
       return state;

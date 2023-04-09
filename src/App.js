@@ -8,10 +8,12 @@ import Detail from "./components/Detail";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Form from "./components/Form";
 import Fav from "./components/fav";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite, remove } from "./redux/action";
 
 function App() {
   const location = useLocation();
-
+  const dispatch = useDispatch();
   const [characters, setCharacters] = useState([]);
 
   const navigate = useNavigate();
@@ -43,7 +45,10 @@ function App() {
   }
 
   const onClose = (id) => {
+    
     setCharacters(characters.filter((character) => character.id !== id));
+    dispatch(remove(id));
+    dispatch(removeFavorite(id));
   };
 
   return (

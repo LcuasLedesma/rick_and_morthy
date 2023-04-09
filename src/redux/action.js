@@ -21,3 +21,8 @@ export const orderCards = (orden) => ({
 export const showAllCharacters = () => ({
   type: "ShowAllCharacters",
 });
+
+export const remove = (id) => ({
+  type: "REMOVE",
+  payload: id
+});
