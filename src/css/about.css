@@ -1,0 +1,59 @@
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    text-align: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.columna-inferior{
+    display: flex;
+    flex-direction: column;
+    background-color: #1b5043;
+    width: 40%;
+        
+    padding-bottom: 40px;
+    font-family: Arial;
+    font-size: 20px;
+    height: fit-content;
+    border: solid 5px #11352c;
+    
+}
+
+.title{
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #a1a334;
+}
+
+.title h1{
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+
+.parraf1{
+    color: rgb(194, 194, 194);
+    
+    width: 60%;
+    align-self: center;
+}
+
+.parraf1 h2{
+    letter-spacing:1px;
+    line-height: 30px;
+}
+
+.parraf2{
+    color: rgb(194, 194, 194);
+    
+    width: 60%;
+    align-self: center;
+}
+
+.parraf2 h2{
+    line-height: 30px;
+    letter-spacing:1px;
+}
