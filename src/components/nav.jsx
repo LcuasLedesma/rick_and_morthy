@@ -19,12 +19,18 @@ export default function Nav(props) {
     props.setAccess(false);
     navigate('/')
   }
+
+  const addRandomCharacter = () =>{
+    props.addRandomCharacter()
+  }
+
   return (
     <nav className='nav'>
       
         <div className='left'>
           <input type="text" value={id} onChange={handleChange} placeholder='Search your card' />
           <button onClick={onSearch} className='button'>Add</button>
+          <button onClick={addRandomCharacter} className='button'>Random</button>
         </div>
         
         <div className='buttons'>

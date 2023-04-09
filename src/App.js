@@ -32,7 +32,31 @@ function App() {
     }
   }
 
+  function addRandomCharacter() {
+    const randomId = Math.floor(Math.random() * 827) + 1;
+    axios(`https://rickandmortyapi.com/api/character/${randomId}`).then(
+      ({ data }) => {
+        if (data.name) {
+          // Verifica si el personaje ya está en la lista
+          if (characters.some((character) => character.id === data.id)) {
+            window.alert("¡Este personaje ya está en la lista!");
+          } else {
+            setCharacters((oldChars) => [...oldChars, data]);
+          }
+        } else {
+          window.alert("¡No hay personajes con este ID!");
+        }
+      }
+    );
+  }
+
   function onSearch(id) {
+    // Verifica si el personaje ya está en la lista
+    if (characters.some((character) => character.id === parseInt(id))) {
+      window.alert("¡Este personaje ya está en la lista!");
+      return;
+    }
+  
     axios(`https://rickandmortyapi.com/api/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
@@ -54,7 +78,7 @@ function App() {
   return (
     <div>
       {location.pathname !== "/" && (
-        <Nav onSearch={onSearch} setAccess={setAccess} access={access} />
+        <Nav onSearch={onSearch} setAccess={setAccess} access={access} addRandomCharacter={addRandomCharacter}/>
       )}
       <Routes>
         <Route path="/Favorites" element={<Fav />} />
