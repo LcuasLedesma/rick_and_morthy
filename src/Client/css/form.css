@@ -1,0 +1,86 @@
+/* index.css */
+
+/* Estilos generales */
+.email-container input,
+.password-container input {
+  padding: 0;
+  justify-self: end;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  height: 2rem;
+  font-size: 18px;
+  text-align: center;
+  font-family: Arial;
+}
+
+
+.email-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.password-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form input:focus { 
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  width: 30%;
+  height: fit-content;
+  border: solid 5px #0f2c25;
+  background-color: #1b5043;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0rem;
+  align-items: center;
+}
+
+.label11 {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.label22 {
+  color: #fffdfd;
+  font-size: 1.5rem;
+}
+
+.form p{
+  color: #a1a334;
+  padding: 0;
+  margin: 0;
+}
+
+.buttn{
+  font-size: 16px;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 5px;
+  width: 7rem;
+  height: 10%;
+  background-color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 60%;
+  }
+}
+  
