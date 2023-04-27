@@ -1,12 +1,13 @@
 import React from 'react';
 import '../css/about.css';
+import img from '../img/WhatsApp Image 2023-04-17 at 07.50.13 (1).jpeg'
 
 export default function About() {
   return (
     <div className='contenedor'>
 
       <div className='columna-superior'>
-        <img src="../img/ramas.jpg"/>
+        
       </div>
 
       <div className='columna-inferior'>

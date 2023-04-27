@@ -8,7 +8,7 @@ export default function Detail(){
   const [character, setCharacter] = useState({})
   const { id } = useParams();
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+    axios(`http://localhost:3001/rickandmorty/character/detail/${id}`).then(({ data }) => {
        if (data.name) {
           setCharacter(data);
        } else {

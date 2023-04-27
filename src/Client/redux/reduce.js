@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_FAV":
       const newFavorites = [...state.favorites, action.payload];
-
+      
       return {
         ...state,
         favorites: newFavorites,
@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
     case "REMOVE_FAV":
       
       const updatedFavorites = state.favorites.filter(
-        (fav) => fav.id !== action.payload
+        (fav) => fav.id !== action.payload.id
       );
       return {
         ...state,

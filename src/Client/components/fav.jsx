@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  removeFavorite,
   filterCards,
   orderCards,
   showAllCharacters,
@@ -62,6 +61,7 @@ function Fav() {
         {isFavoritesAllCharacters
           ? favorites.map((fav) => (
               <Card
+                key={fav.id}
                 name={fav.name}
                 species={fav.species}
                 gender={fav.gender}
@@ -71,6 +71,7 @@ function Fav() {
             ))
           : allCharacters.map((fav) => (
               <Card
+                key={fav.id}
                 name={fav.name}
                 species={fav.species}
                 gender={fav.gender}

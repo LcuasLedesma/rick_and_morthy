@@ -9,6 +9,7 @@ function Cards(props){
         characters.map(({id, name, species, gender, image})=>{
           return(
             <Card 
+              key={id}
               name={name}
               species={species}
               gender={gender}
