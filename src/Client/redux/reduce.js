@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_FAV":
       const newFavorites = [...state.favorites, action.payload];
-      
+      console.log(action);
       return {
         ...state,
         favorites: newFavorites,

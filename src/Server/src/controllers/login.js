@@ -1,32 +1,29 @@
+const { User } = require('../DB_connection');
 
-
-require("dotenv").config();
-
-const EMAIL = process.env.EMAIL;
-const PASSWORD = process.env.PASSWORD;
-
-const STATUS_OK = 200
-const STATUS_ERROR = 500 
-
-function login (req, res) {
-  const {password, email} = req.query;
+const login = async (req, res) => {
+  const { email, password } = req.query;
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Faltan datos' });
+  }
 
   try {
-    
-    if (!password || !email) {
-      return res.status(STATUS_ERROR).json({message: 'No se ha enviado la información necesaria'});
-    }
-    if (password === PASSWORD && email === EMAIL) {
-      return res.status(STATUS_OK).json({access: true});
-    }else{
-      res.status(STATUS_OK).json({access: false});
-    }
-  } catch (error) {
-    res.status(STATUS_ERROR).json(error);
-  }
- 
-}
+    const user = await User.findOne({
+      where: { email, password },
+    });
 
-module.exports = {
-  login,
-}
+    if (!user) {
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    if (user.password === password) {
+      return res.json({access: true});
+    }else {
+      return res.status(403).json({ message: 'Contraseña incorrecta' });
+    }	  
+    
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = login;
